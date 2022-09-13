@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Layout } from '../components/Layout';
 import { ProductCard } from '../components/ProductCard';
 
 
@@ -17,13 +18,13 @@ const HomePage = ({ products }) => {
   }, []);
 
 	return (
-		<>
+		<Layout>
 			<div className="grid gap-4 grid-cols-1 md:grid-cols-3">{
-          catalogo&&
-          catalogo.map( (product) => <ProductCard produto={product} /> )
+				catalogo&&
+				catalogo.map( (product) => <ProductCard produto={product} /> )
 			}
-      </div>
-		</>
+			</div>
+		</Layout>
 	)
 }
 
