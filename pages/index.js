@@ -4,6 +4,7 @@ import { ProductCard } from '../components/ProductCard';
 
 
 const HomePage = ({ products }) => {
+	/*
 	const [catalogo, setCatalogo] = useState();
 
 	const getCatalogo = async () => {
@@ -16,20 +17,19 @@ const HomePage = ({ products }) => {
 	useEffect(() => {
 		getCatalogo();
 	}, []);
-
+	*/
 
 	return (
 		<Layout>
 			<div className="grid gap-4 grid-cols-1 md:grid-cols-3">{
-				catalogo&&
-				catalogo.map( (product) => <ProductCard produto={product} key={product.id} /> )
+				products&&
+				products.map( (product) => <ProductCard produto={product} key={product.id} /> )
 			}
 			</div>
 		</Layout>
 	)
 }
 
-/*
 export const getServerSideProps = async (context) => {
 	const hostAddress = 'http://' + context.req.headers.host;
 	const { data: products } = await fetch(hostAddress + '/api/products')
@@ -39,6 +39,5 @@ export const getServerSideProps = async (context) => {
 		},
 	}
 }
-*/
 
 export default HomePage
