@@ -28,7 +28,6 @@ const HomePage = ({ products }) => {
 	)
 }
 
-
 /*
 export const getServerSideProps = async (context) => {
 	const hostAddress = 'http://' + context.req.headers.host;
