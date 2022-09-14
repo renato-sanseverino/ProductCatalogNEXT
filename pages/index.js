@@ -4,18 +4,19 @@ import { ProductCard } from '../components/ProductCard';
 
 
 const HomePage = ({ products }) => {
-  const [catalogo, setCatalogo] = useState();
+	const [catalogo, setCatalogo] = useState();
 
-  const getCatalogo = async () => {
-    const response = await fetch('api/products')
-    .then((response) => response.json());
+	const getCatalogo = async () => {
+		const response = await fetch('api/products')
+		.then((response) => response.json());
 
-    setCatalogo(response);
-  }
+		setCatalogo(response);
+	}
 
-  useEffect(() => {
-    getCatalogo();
-  }, []);
+	useEffect(() => {
+		getCatalogo();
+	}, []);
+
 
 	return (
 		<Layout>
