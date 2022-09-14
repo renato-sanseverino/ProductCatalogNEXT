@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Layout } from '../components/Layout';
 import { ProductCard } from '../components/ProductCard';
+import { ProductList } from '../components/ProductList';
 
 
 const HomePage = ({ products }) => {
@@ -21,6 +22,8 @@ const HomePage = ({ products }) => {
 
 	return (
 		<Layout>
+			<ProductList products={products}></ProductList>
+
 			<div className="grid gap-4 grid-cols-1 md:grid-cols-3">{
 				products&&
 				products.map( (product) => <ProductCard produto={product} key={product.id} /> )
