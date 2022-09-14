@@ -59,7 +59,7 @@ export const ProductList = ({ products }) => {
 	const handleResult = (result) => {
         // apos confirmação exlcui os registros
 		if (result) {
-			const promises = selectionModel.map(async (id) => { await axios.delete(`/api/products/${id}`) } );
+			const promises = selectionModel.map(async (id) => { await fetch(`/api/products/${id}`, { method: 'DELETE' }) } )
 			Promise.all(promises)
 				.then(() => { router.push("/") } )
 				.catch((error) => { toast.error(error.message) })
