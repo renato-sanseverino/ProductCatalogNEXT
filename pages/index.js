@@ -32,12 +32,10 @@ const HomePage = ({ products }) => {
 
 export const getServerSideProps = async (context) => {
 	const hostAddress = 'http://' + context.req.headers.host;
-	const { data: products } = await fetch(hostAddress + '/api/products')
-	return {
-		props: {
-			products,
-		},
-	}
+	const response = await fetch(`${hostAddress}/api/products`)
+	const products = await response.json();
+
+	return { props: { products } }
 }
 
 export default HomePage
