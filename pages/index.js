@@ -31,7 +31,9 @@ const HomePage = ({ products }) => {
 }
 
 export const getServerSideProps = async (context) => {
-	const hostAddress = 'http://' + context.req.headers.host;
+	// protocol is the same for backend and frontend when using Nextjs
+	const protocol = context.req.headers["x-forwarded-proto"] || context.req.connection.encrypted?"https":"http"
+	const hostAddress = protocol + '://' + context.req.headers.host;
 	const response = await fetch(`${hostAddress}/api/products`)
 
 	const products = await response.json();
