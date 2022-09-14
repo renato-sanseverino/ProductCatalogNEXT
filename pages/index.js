@@ -21,7 +21,7 @@ const HomePage = ({ products }) => {
 		<Layout>
 			<div className="grid gap-4 grid-cols-1 md:grid-cols-3">{
 				catalogo&&
-				catalogo.map( (product) => <ProductCard produto={product} /> )
+				catalogo.map( (product) => <ProductCard produto={product} key={product.id} /> )
 			}
 			</div>
 		</Layout>
