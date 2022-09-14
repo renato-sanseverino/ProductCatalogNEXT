@@ -11,7 +11,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import toast, { Toaster } from "react-hot-toast";
 import { api, notification } from "../config/notification";
-import { ProductForm } from '../components/ProductForm';
 import { ClickableField } from "../components/ClickableField";
 import { ConfirmationDialog } from '../components/ConfirmationDialog';
 
@@ -74,7 +73,7 @@ export const ProductList = ({ products }) => {
 
 			<Draggable>
 				<Dialog open={open} onClose={toggle} BackdropProps={{ style: { backgroundColor: "transparent" } }} >
-					<ProductForm dialogRef={{ toggle }} />
+					<div dialogRef={{ toggle }} ></div>
 				</Dialog>
 			</Draggable>
 
