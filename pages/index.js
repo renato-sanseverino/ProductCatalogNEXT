@@ -33,8 +33,8 @@ const HomePage = ({ products }) => {
 export const getServerSideProps = async (context) => {
 	const hostAddress = 'http://' + context.req.headers.host;
 	const response = await fetch(`${hostAddress}/api/products`)
-	const products = await response.json();
 
+	const products = await response.json();
 	return { props: { products } }
 }
 
