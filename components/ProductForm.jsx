@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import { notification } from '../config/notification'
-import { CategorySelect } from './CategorySelect'
 
 
 export const ProductForm = ({dialogRef}) => {
@@ -116,7 +115,6 @@ export const ProductForm = ({dialogRef}) => {
 						onChange={onChange}
 					/>
 				</div>
-				<CategorySelect></CategorySelect>
 				<div className="mb-4">
 					<label htmlFor="foto" className="block text-gray-700 text-sm font-bold md-2">
 						Foto

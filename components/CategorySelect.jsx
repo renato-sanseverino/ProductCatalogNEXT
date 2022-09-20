@@ -12,7 +12,7 @@ export const CategorySelect = () => {
             categories.map( (categoria) => <option value={categoria.id} key={categoria.id} >{categoria.nome}</option> )
         }
         </select>
-        <button>ADD</button>
+        <img src="icons/circle_plus.svg" className="w-7 h-7"></img>
         </div>
     )
 }
