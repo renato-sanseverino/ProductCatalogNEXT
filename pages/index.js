@@ -2,14 +2,11 @@ import { useState, useEffect } from 'react'
 import { Layout } from '../components/Layout'
 import { ProductCard } from '../components/ProductCard'
 import { ProductList } from '../components/ProductList'
-import CategoryContext from '../components/CategoryContext'
 
 
-const HomePage = ({ products, productCategories }) => {
-	const [categories, setCategories] = useState(productCategories)
-
-	/*
-	const [catalogo, setCatalogo] = useState();
+const HomePage = () => {
+	// const [categories, setCategories] = useState(productCategories)
+	const [catalogo, setCatalogo] = useState([]);
 
 	const getCatalogo = async () => {
 		const response = await fetch('api/products')
@@ -21,23 +18,21 @@ const HomePage = ({ products, productCategories }) => {
 	useEffect(() => {
 		getCatalogo();
 	}, []);
-	*/
 
 	return (
-		<CategoryContext.Provider value={{categories, setCategories}}>
-			<Layout>
-				<ProductList products={products}></ProductList>
-				
-				<div className="grid gap-4 grid-cols-1 md:grid-cols-3">{
-					products&&
-					products.map( (product) => <ProductCard produto={product} key={product.id} /> )
-				}
-				</div>
-			</Layout>
-		</CategoryContext.Provider>
+		<Layout>
+			<ProductList products={catalogo}></ProductList>
+
+			<div className="grid gap-4 grid-cols-1 md:grid-cols-3">{
+				catalogo&&
+				catalogo.map( (product) => <ProductCard produto={product} key={product.id} /> )
+			}
+			</div>
+		</Layout>
 	)
 }
 
+/*
 export const getServerSideProps = async (context) => {
 	const protocol = context.req.headers["x-forwarded-proto"] || context.req.connection.encrypted?"https":"http"
 	const hostAddress = protocol + '://' + context.req.headers.host
@@ -51,5 +46,6 @@ export const getServerSideProps = async (context) => {
 
 	return { props: { products, productCategories } }
 }
+*/
 
 export default HomePage
